@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brush & Blush by Kay</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #0b0b0b;
+      color: #fff;
+    }
+    header {
+      background: #111;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #ff69b4;
+    }
+    header h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 40px;
+      color: #ff69b4;
+    }
+    nav a {
+      margin-left: 25px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ff69b4;
+    }
+
+    .hero {
+      padding: 80px 20px;
+      text-align: center;
+      background: linear-gradient(to bottom right, #ff69b4, #ff1493);
+      color: #fff;
+    }
+    .hero h2 {
+      font-size: 45px;
+      font-family: 'Great Vibes', cursive;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 18px;
+      font-weight: 500;
+      margin-top: 10px;
+    }
+
+    .signup {
+      background: #1a1a1a;
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .signup h3 {
+      font-size: 28px;
+      color: #ff69b4;
+      margin-bottom: 20px;
+    }
+    .signup input {
+      padding: 12px;
+      margin: 10px;
+      width: 250px;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+      font-size: 15px;
+    }
+    .signup button, .signin-btn {
+      background: #ff69b4;
+      color: #fff;
+      border: none;
+      padding: 12px 25px;
+      margin-top: 15px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 10px;
+    }
+    .redirecting-msg {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #aaa;
+    }
+
+    footer {
+      background: #0b0b0b;
+      padding: 30px;
+      text-align: center;
+      color: #aaa;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Brush & Blush by Kay</h1>
+    <nav>
+      <a href="#signup">Sign Up</a>
+      <a href="#">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Brush & Blush by Kay</h2>
+    <p>Slaying beauty with one brush at a time – Nails, Makeup, Tattoo, Microblading, Eyelashes & more in one place.</p>
+  </section>
+
+  <section class="signup" id="signup">
+    <h3>Sign Up to Book a Service</h3>
+    <input type="text" id="email" placeholder="Email or iCloud username" /><br>
+    <input type="password" id="password" placeholder="Password" /><br>
+    <button onclick="signup()">Sign Up</button>
+    <div style="margin-top:20px;">
+      <button class="signin-btn" onclick="googleSignIn()">Sign in with Google</button>
+      <button class="signin-btn" onclick="appleSignIn()">Sign in with Apple</button>
+    </div>
+    <div class="redirecting-msg" id="redirectMsg"></div>
+  </section>
+
+  <footer id="contact">
+    Contact us via <a href="https://wa.me/2348160766773?text=I%20want%20one%20of%20your%20services" style="color:#ff69b4;text-decoration:underline;">WhatsApp</a><br><br>
+    &copy; 2025 Brush & Blush by Kay. All Rights Reserved.
+  </footer>
+
+  <script>
+    function signup() {
+      const email = document.getElementById('email').value.trim();
+      const pass = document.getElementById('password').value.trim();
+      const msg = document.getElementById('redirectMsg');
+
+      if (email === "" || pass === "") {
+        alert("Please fill in both fields.");
+        return;
+      }
+
+      msg.textContent = "Redirecting to services...";
+      setTimeout(() => {
+        window.location.href = "services.html";
+      }, 2000);
+    }
+
+    function googleSignIn() {
+      alert("Redirecting to Google Sign-In...");
+      setTimeout(() => {
+        window.location.href = "services.html";
+      }, 2000);
+    }
+
+    function appleSignIn() {
+      alert("Redirecting to Apple Sign-In...");
+      setTimeout(() => {
+        window.location.href = "services.html";
+      }, 2000);
+    }
+  </script>
+
+</body>
+</html>
